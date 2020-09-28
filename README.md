@@ -1,4 +1,11 @@
-# RabitaAngAppOne
+# RecipesAngularApp
+
+## Project Description
+
+Created as part of a job application, this Angular Website involves calling a JSON API from TheMealDB to display a fully designed set of meals. Angular routing is then used to navigate across the site and view the preparation details of the recipes. TSLint has been used in an attempt to ensure adherence to
+coding standards.
+
+The design of the website has been done using pure HTML5 and CSS and the UI design is entirely my own, done from scratch, without any external templates or references. The code in the initial commit was completed from scratch in 24 hours of work. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
