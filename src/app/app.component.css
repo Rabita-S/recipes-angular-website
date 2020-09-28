@@ -1,24 +1,9 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 2em;
-    margin-bottom: 6em;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    
-}
 
 footer {
     margin: 4em;
     text-align: center;
 }
 
-@media (min-width: 650px) {
-    body{
-        font-size: 18px;
-    }
-}
+
 

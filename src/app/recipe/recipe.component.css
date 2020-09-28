@@ -16,8 +16,11 @@ main {
 .site-title {
     font-family: 'Bilbo Swash Caps', cursive;
     font-weight: normal;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
     cursor: pointer;
+    max-width: 1400px;
 }
 
 .recipe-name {
@@ -65,12 +68,12 @@ main {
 
 
 
-.recipeIngredients{
+.recipe-ingredients{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     text-transform: capitalize;
-    grid-gap: 0 1em;
-    margin-bottom: 2em;
+    justify-content: space-evenly;
+    margin-bottom: .5em;
 
 }
 
@@ -80,7 +83,6 @@ main {
 .recipe-ingredient-measure {
     margin: .5em;
 }
-
 
 
 .recipe-instructions-text {
@@ -114,7 +116,7 @@ main {
     .site-title { 
         text-align: center;
         font-size: 4rem;
-        margin: 0;
+        margin: 0 auto;
         margin-bottom: 1rem;
         background-color:rgb(196, 61, 21);
         color: rgb(235, 219, 201);

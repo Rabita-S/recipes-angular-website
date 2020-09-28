@@ -11,7 +11,10 @@ export class RecipeComponent implements OnInit {
 
   recipe: any = null;
   recipeId: number = null;
-  recipeIngredients: string[] = [];
+  recipeIngredients: {
+    recIngredient: string;
+    recMeasure: string;
+  }[] = [];
 
   constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
 
@@ -19,6 +22,12 @@ export class RecipeComponent implements OnInit {
     this.recipeId = +this.route.snapshot.params.id;
     this.apiService.getRecipe(this.recipeId).subscribe((data: any) => {
       this.recipe = data.meals[0];
+      for (let i = 1; i <= 20; i++) {
+        if (this.getRecipeIngredient(i)) {
+          this.recipeIngredients.push(this.getRecipeIngredient(i));
+        }
+      }
+      console.log(this.recipeIngredients);
     });
   }
 
@@ -30,50 +39,206 @@ export class RecipeComponent implements OnInit {
   get recipeImg(): any { return this.recipe ? this.recipe.strMealThumb : null; }
   get recipeInstructions(): string { return this.recipe ? this.recipe.strInstructions : null; }
 
-  /*The following repetitive code here, and in this component's html, is due to the
+  /*The following repetitive code here is due to the
   unusual nature of the API where the ingredients are not available as an array */
 
-  get recipeIngredient1(): string { return this.recipe ? this.recipe.strIngredient1 : null; }
-  get recipeIngredient2(): string { return this.recipe ? this.recipe.strIngredient2 : null; }
-  get recipeIngredient3(): string { return this.recipe ? this.recipe.strIngredient3 : null; }
-  get recipeIngredient4(): string { return this.recipe ? this.recipe.strIngredient4 : null; }
-  get recipeIngredient5(): string { return this.recipe ? this.recipe.strIngredient5 : null; }
-  get recipeIngredient6(): string { return this.recipe ? this.recipe.strIngredient6 : null; }
-  get recipeIngredient7(): string { return this.recipe ? this.recipe.strIngredient7 : null; }
-  get recipeIngredient8(): string { return this.recipe ? this.recipe.strIngredient8 : null; }
-  get recipeIngredient9(): string { return this.recipe ? this.recipe.strIngredient9 : null; }
-  get recipeIngredient10(): string { return this.recipe ? this.recipe.strIngredient10 : null; }
-  get recipeIngredient11(): string { return this.recipe ? this.recipe.strIngredient11 : null; }
-  get recipeIngredient12(): string { return this.recipe ? this.recipe.strIngredient12 : null; }
-  get recipeIngredient13(): string { return this.recipe ? this.recipe.strIngredient13 : null; }
-  get recipeIngredient14(): string { return this.recipe ? this.recipe.strIngredient14 : null; }
-  get recipeIngredient15(): string { return this.recipe ? this.recipe.strIngredient15 : null; }
-  get recipeIngredient16(): string { return this.recipe ? this.recipe.strIngredient16 : null; }
-  get recipeIngredient17(): string { return this.recipe ? this.recipe.strIngredient17 : null; }
-  get recipeIngredient18(): string { return this.recipe ? this.recipe.strIngredient18 : null; }
-  get recipeIngredient19(): string { return this.recipe ? this.recipe.strIngredient19 : null; }
-  get recipeIngredient20(): string { return this.recipe ? this.recipe.strIngredient20 : null; }
+  public getRecipeIngredient(i: number): { recIngredient: string; recMeasure: string; } {
+    let ingredient = null;
+    let measure = null;
+    switch (i) {
+      case 1: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient1 !== '' && this.recipe.strIngredient1 !== null) {
+            ingredient = this.recipe.strIngredient1;
+            measure = this.recipe.strMeasure1;
+          }
+        }
+        break;
+      }
+      case 2: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient2 !== '' && this.recipe.strIngredient2 !== null) {
+            ingredient = this.recipe.strIngredient2;
+            measure = this.recipe.strMeasure2;
+          }
+        }
+        break;
+      }
+      case 3: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient3 !== '' && this.recipe.strIngredient3 !== null) {
+            ingredient = this.recipe.strIngredient3;
+            measure = this.recipe.strMeasure3;
+          }
+        }
+        break;
+      }
+      case 4: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient4 !== '' && this.recipe.strIngredient4 !== null) {
+            ingredient = this.recipe.strIngredient4;
+            measure = this.recipe.strMeasure4;
+          }
+        }
+        break;
+      }
+      case 5: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient5 !== '' && this.recipe.strIngredient5 !== null) {
+            ingredient = this.recipe.strIngredient5;
+            measure = this.recipe.strMeasure5;
+          }
+        }
+        break;
+      }
+      case 6: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient6 !== '' && this.recipe.strIngredient6 !== null) {
+            ingredient = this.recipe.strIngredient6;
+            measure = this.recipe.strMeasure6;
+          }
+        }
+        break;
+      }
+      case 7: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient7 !== '' && this.recipe.strIngredient7 !== null) {
+            ingredient = this.recipe.strIngredient7;
+            measure = this.recipe.strMeasure7;
+          }
+        }
+        break;
+      }
+      case 8: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient8 !== '' && this.recipe.strIngredient8 !== null) {
+            ingredient = this.recipe.strIngredient8;
+            measure = this.recipe.strMeasure8;
+          }
+        }
+        break;
+      }
+      case 9: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient9 !== '' && this.recipe.strIngredient9 !== null) {
+            ingredient = this.recipe.strIngredient9;
+            measure = this.recipe.strMeasure9;
+          }
+        }
+        break;
+      }
+      case 10: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient10 !== '' && this.recipe.strIngredient10 !== null) {
+            ingredient = this.recipe.strIngredient10;
+            measure = this.recipe.strMeasure10;
+          }
+        }
+        break;
+      }
+      case 11: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient11 !== '' && this.recipe.strIngredient11 !== null) {
+            ingredient = this.recipe.strIngredient11;
+            measure = this.recipe.strMeasure11;
+          }
+        }
+        break;
+      }
+      case 12: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient12 !== '' && this.recipe.strIngredient12 !== null) {
+            ingredient = this.recipe.strIngredient12;
+            measure = this.recipe.strMeasure12;
+          }
+        }
+        break;
+      }
+      case 13: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient13 !== '' && this.recipe.strIngredient13 !== null) {
+            ingredient = this.recipe.strIngredient13;
+            measure = this.recipe.strMeasure13;
+          }
+        }
+        break;
+      }
+      case 14: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient14 !== '' && this.recipe.strIngredient14 !== null) {
+            ingredient = this.recipe.strIngredient14;
+            measure = this.recipe.strMeasure14;
+          }
+        }
+        break;
+      }
+      case 15: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient15 !== '' && this.recipe.strIngredient15 !== null) {
+            ingredient = this.recipe.strIngredient15;
+            measure = this.recipe.strMeasure15;
+          }
+        }
+        break;
+      }
+      case 16: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient16 !== '' && this.recipe.strIngredient16 !== null) {
+            ingredient = this.recipe.strIngredient16;
+            measure = this.recipe.strMeasure16;
+          }
+        }
+        break;
+      }
+      case 17: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient17 !== '' && this.recipe.strIngredient17 !== null) {
+            ingredient = this.recipe.strIngredient17;
+            measure = this.recipe.strMeasure17;
+          }
+        }
+        break;
+      }
+      case 18: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient18 !== '' && this.recipe.strIngredient18 !== null) {
+            ingredient = this.recipe.strIngredient18;
+            measure = this.recipe.strMeasure18;
+          }
+        }
+        break;
+      }
+      case 19: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient19 !== '' && this.recipe.strIngredient19 !== null) {
+            ingredient = this.recipe.strIngredient19;
+            measure = this.recipe.strMeasure19;
+          }
+        }
+        break;
+      }
+      case 20: {
+        if (this.recipe) {
+          if (this.recipe.strIngredient20 !== '' && this.recipe.strIngredient20 !== null) {
+            ingredient = this.recipe.strIngredient20;
+            measure = this.recipe.strMeasure20;
+          }
+        }
+        break;
+      }
+      default: {
+        ingredient = null;
+        break;
+      }
+    }
+    if (ingredient === null) {
+      return null;
+    }
+    else {
+      return { recIngredient: ingredient, recMeasure: measure };
+    }
 
-  get recipeIngredientMeasure1(): string { return this.recipe ? this.recipe.strMeasure1 : null; }
-  get recipeIngredientMeasure2(): string { return this.recipe ? this.recipe.strMeasure2 : null; }
-  get recipeIngredientMeasure3(): string { return this.recipe ? this.recipe.strMeasure3 : null; }
-  get recipeIngredientMeasure4(): string { return this.recipe ? this.recipe.strMeasure4 : null; }
-  get recipeIngredientMeasure5(): string { return this.recipe ? this.recipe.strMeasure5 : null; }
-  get recipeIngredientMeasure6(): string { return this.recipe ? this.recipe.strMeasure6 : null; }
-  get recipeIngredientMeasure7(): string { return this.recipe ? this.recipe.strMeasure7 : null; }
-  get recipeIngredientMeasure8(): string { return this.recipe ? this.recipe.strMeasure8 : null; }
-  get recipeIngredientMeasure9(): string { return this.recipe ? this.recipe.strMeasure9 : null; }
-  get recipeIngredientMeasure10(): string { return this.recipe ? this.recipe.strMeasure10 : null; }
-  get recipeIngredientMeasure11(): string { return this.recipe ? this.recipe.strMeasure11 : null; }
-  get recipeIngredientMeasure12(): string { return this.recipe ? this.recipe.strMeasure12 : null; }
-  get recipeIngredientMeasure13(): string { return this.recipe ? this.recipe.strMeasure13 : null; }
-  get recipeIngredientMeasure14(): string { return this.recipe ? this.recipe.strMeasure14 : null; }
-  get recipeIngredientMeasure15(): string { return this.recipe ? this.recipe.strMeasure15 : null; }
-  get recipeIngredientMeasure16(): string { return this.recipe ? this.recipe.strMeasure16 : null; }
-  get recipeIngredientMeasure17(): string { return this.recipe ? this.recipe.strMeasure17 : null; }
-  get recipeIngredientMeasure18(): string { return this.recipe ? this.recipe.strMeasure18 : null; }
-  get recipeIngredientMeasure19(): string { return this.recipe ? this.recipe.strMeasure19 : null; }
-  get recipeIngredientMeasure20(): string { return this.recipe ? this.recipe.strMeasure20 : null; }
+  }
 
 
 }

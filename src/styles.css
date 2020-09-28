@@ -4,3 +4,22 @@ html {
     background-color: rgba(255, 153, 0, 0.11);
 
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 2em;
+    margin-bottom: 6em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    
+}
+
+@media (min-width: 650px) {
+    body{
+        font-size: 18px;
+    }
+}
