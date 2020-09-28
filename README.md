@@ -1,4 +1,4 @@
-# RecipesAngApp
+# RecipesAngularApp
 
 ## Project Description
 
