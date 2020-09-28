@@ -1,0 +1,31 @@
+<header>
+    <h1 class="site-title">
+        Grandma's Best Recipes
+    </h1>
+</header>
+<main>
+    <div class="home-container">
+        <img class="title-img" src="https://images.unsplash.com/photo-1560717845-968823efbee1"
+            alt="picture of seafood" />
+        <p class="story-text">I remember that, growing up, I didn’t have too many memories with my grandma. Living in
+            different cities, I’d only see her every few months. But I remember one thing so vividly: my grandmother’s
+            cooking. There was never a day when I thought that it wasn’t the best thing I’d ever tasted in my life.
+            Every time I’d go to see her, it was like I was visiting a new world of flavors. She really opened my eyes
+            to all the amazing things the world had to offer. So when I found this old diary of all of her recipes, I
+            knew what I wanted to do. I wanted everyone else to enjoy food the way I had been able to as a kid. I hope
+            these delicious, homely recipes will be able to bring a smile to your faces, something you can remember
+            fondly like I do.</p>
+        <h4 *ngIf="meals.length === 0">Loading</h4>
+        <div class="meals-container">
+            <div *ngFor="let meal of meals">
+                <div class="meal-card" (click)="routeToRecipe(meal.idMeal)">
+                    <h2 class="meal-name"> {{meal.strMeal}} </h2>
+                    <img class="meal-img" style="height:100%; width: 100%;" src="{{ meal.strMealThumb }}"
+                        alt="picture of seafood" />
+                    <button routerLink="/recipe/{{ meal.idMeal }}" class="see-recipe-btn">See Recipe</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

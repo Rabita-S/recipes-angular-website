@@ -1,0 +1,137 @@
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: #303030;
+}
+
+main {
+
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.site-title {
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-weight: normal;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.recipe-name {
+    font-family: 'Bilbo', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: .5em 0;
+    line-height: 1;
+    position: relative;
+}
+
+.recipe-name::before {
+    content: "";
+    position: absolute;
+    height: 6px;
+    width: 40%;
+    background: linear-gradient(90deg, rgba(243,137,67,1) 0%, rgba(243,137,67,0.1250700963979342) 100%); 
+    bottom: 4px;
+    z-index: -1;
+    
+}
+
+.recipe-img {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.recipe-subtitle-text {
+    font-family: 'Bilbo', cursive;
+    font-size: 2rem;
+    margin: 0;
+    position: relative;
+}
+
+.recipe-subtitle-text::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 40%;
+    background: linear-gradient(90deg, rgba(243,137,67,1) 0%, rgba(243,137,67,0.1250700963979342) 100%); 
+    bottom: 12px;
+    z-index: -1;
+}
+
+
+
+.recipeIngredients{
+    display: grid;
+    grid-template-columns: auto auto;
+    text-transform: capitalize;
+    grid-gap: 0 1em;
+    margin-bottom: 2em;
+
+}
+
+.recipe-ingredient {
+    margin: .5em;
+}
+.recipe-ingredient-measure {
+    margin: .5em;
+}
+
+
+
+.recipe-instructions-text {
+    line-height: 2.5;
+
+}
+
+.home-btn {
+
+    font-family: 'Raleway', sans-serif;;
+    font-size: 1rem;
+    font-weight: bold;
+
+    border-style: unset;
+    padding: 1em;
+    background-color:rgb(196, 61, 21);
+    color: rgb(235, 219, 201);
+    cursor: pointer;
+    transition: ease 500ms;
+
+
+}
+
+.home-btn:hover, 
+.home-btn:focus {
+
+    background-color:rgba(230, 75, 28, 0.644)
+}
+
+@media (min-width: 650px) {
+    .site-title { 
+        text-align: center;
+        font-size: 4rem;
+        margin: 0;
+        margin-bottom: 1rem;
+        background-color:rgb(196, 61, 21);
+        color: rgb(235, 219, 201);
+        cursor: pointer;
+    }
+   .recipe-img {
+       width: 60%;
+   }
+
+   .ingredients-container {
+       max-width: 20em;
+   }
+
+   .home-btn {
+    font-size: 1.5rem;
+   }
+
+
+} 
+
